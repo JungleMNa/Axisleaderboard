@@ -8,7 +8,7 @@ const translations = {
             leaderboard: 'LEADERBOARD'
         },
         home: {
-            title: 'WARNAMENT LEADERBOARD',
+            title: 'AXIS LEADERBOARD',
             subtitle: 'Join events',
             viewEvents: 'VIEW EVENTS',
             leaderboard: 'LEADERBOARD',
@@ -81,7 +81,7 @@ const translations = {
             viewEvents: 'VIEW EVENTS'
         },
         footer: {
-            copyright: '© 2024 Warnament Leaderboard. All rights reserved.'
+            copyright: '© 2024 Axis Leaderboard. All rights reserved.'
         }
     },
     ru: {
@@ -92,7 +92,7 @@ const translations = {
             leaderboard: 'ТАБЛИЦА ЛИДЕРОВ'
         },
         home: {
-            title: 'ТАБЛИЦА ЛИДЕРОВ WARNAMENT',
+            title: 'ТАБЛИЦА ЛИДЕРОВ AXIS',
             subtitle: 'Присоединяйтесь к событиям и докажите своё стратегическое мастерство',
             viewEvents: 'ПОСМОТРЕТЬ СОБЫТИЯ',
             leaderboard: 'ТАБЛИЦА ЛИДЕРОВ',
@@ -165,7 +165,7 @@ const translations = {
             viewEvents: 'ПРОСМОТРЕТЬ СОБЫТИЯ'
         },
         footer: {
-            copyright: '© 2024 Таблица лидеров Warnament. Все права защищены.'
+            copyright: '© 2024 Таблица лидеров Axis. Все права защищены.'
         }
     }
 };
