@@ -36,8 +36,8 @@ const translations = {
             discordUsername: 'Discord Username',
             register: 'REGISTER',
             countryLabel: 'Country',
-            selectCountry: 'Select your country',
-            registrationHint: 'Enter your Discord username and select your country to register'
+            selectCountry: 'Enter the country you want to represent',
+            registrationHint: 'Enter your Discord username and the country you want to represent to register'
         },
         leaderboard: {
             title: 'GLOBAL LEADERBOARD',
@@ -58,7 +58,7 @@ const translations = {
             step2Title: 'View Event Details',
             step2Desc: 'Click the "DETAILS" button on any event card to view comprehensive information about that event. This includes the event rules, start time, expected duration, participant count, and any specific requirements for joining.',
             step3Title: 'Register for the Event',
-            step3Desc: 'Click the "ENTER" button on the event card or in the event details modal. A registration form will appear asking for your Discord username and preferred country. Enter your Discord username accurately and select the country you want to represent during the event.',
+            step3Desc: 'Click the "ENTER" button on the event card or in the event details modal. A registration form will appear asking for your Discord username and the country you want to represent. Enter your Discord username accurately and type in the country you plan to play as.',
             step4Title: 'Confirm Your Registration',
             step4Desc: 'After entering your Discord username and country, click the "REGISTER" button to confirm your participation. You\'ll receive a confirmation message indicating that you\'ve been successfully registered for the event.',
             step5Title: 'Prepare and Participate',
@@ -123,8 +123,8 @@ const translations = {
             discordUsername: 'Имя пользователя Discord',
             register: 'ЗАРЕГИСТРИРОВАТЬСЯ',
             countryLabel: 'Страна',
-            selectCountry: 'Выберите свою страну',
-            registrationHint: 'Введите имя пользователя Discord и выберите страну для регистрации'
+            selectCountry: 'Введите страну, которую хотите представлять',
+            registrationHint: 'Введите имя пользователя Discord и страну, которую хотите представлять, чтобы зарегистрироваться'
         },
         leaderboard: {
             title: 'ГЛОБАЛЬНАЯ ТАБЛИЦА ЛИДЕРОВ',
@@ -145,9 +145,9 @@ const translations = {
             step2Title: 'Просмотрите детали события',
             step2Desc: 'Нажмите кнопку "ПОДРОБНЕЕ" на любой карточке события, чтобы просмотреть полную информацию о событии. Это включает правила события, время начала, ожидаемую продолжительность, количество участников и любые особые требования для присоединения.',
             step3Title: 'Зарегистрируйтесь на событие',
-            step3Desc: 'Нажмите кнопку «ВОЙТИ» на карточке события или в модальном окне с подробностями события. Появится форма регистрации, которая попросит указать имя пользователя Discord и предпочитаемую страну. Точно введите своё имя пользователя Discord и выберите страну, которую хотите представлять во время события.',
+            step3Desc: 'Нажмите кнопку «ВОЙТИ» на карточке события или в модальном окне с подробностями события. Появится форма регистрации, которая попросит указать имя пользователя Discord и страну, которую вы хотите представлять. Точно введите своё имя пользователя Discord и впишите страну, под флагом которой собираетесь играть.',
             step4Title: 'Подтвердите свою регистрацию',
-            step4Desc: 'После ввода имени пользователя Discord и выбора страны нажмите кнопку «ЗАРЕГИСТРИРОВАТЬСЯ», чтобы подтвердить участие. Вы получите сообщение подтверждения о том, что вы успешно зарегистрированы на событие.',
+            step4Desc: 'После ввода имени пользователя Discord и страны нажмите кнопку «ЗАРЕГИСТРИРОВАТЬСЯ», чтобы подтвердить участие. Вы получите сообщение подтверждения о том, что вы успешно зарегистрированы на событие.',
             step5Title: 'Подготовьтесь и участвуйте',
             step5Desc: 'После регистрации подготовьте свою стратегию и присоединитесь к событию в запланированное время. Убедитесь, что у вас установлена необходимая игра и она готова к запуску. Координаторы события отправят дополнительные инструкции через Discord, когда событие вот-вот начнется.',
             step6Title: 'Проверьте ваши результаты',

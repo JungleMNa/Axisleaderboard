@@ -214,7 +214,7 @@ function showEnterEvent(eventId) {
     const event = events.find(e => e.id === eventId);
     const modal = document.getElementById('enterEventModal');
     const info = document.getElementById('enterEventInfo');
-    const registerHint = window.i18n ? window.i18n.t('events.registrationHint') : 'Enter your Discord username and select your country to register';
+    const registerHint = window.i18n ? window.i18n.t('events.registrationHint') : 'Enter your Discord username and the country you want to represent to register';
 
     info.innerHTML = `
         <div style="margin-bottom: 2rem; padding: 1rem; background: var(--darker-bg); border-left: 3px solid var(--primary-color);">
@@ -234,11 +234,18 @@ async function submitRegistration() {
     const event = events.find(e => e.id === eventId);
     const discordUsernameInput = document.getElementById('discordUsername');
     const discordUsername = discordUsernameInput.value.trim();
-    const playerCountry = document.getElementById('playerCountry').value;
+    const playerCountryInput = document.getElementById('playerCountry');
+    const playerCountry = playerCountryInput.value.trim();
 
     if (!discordUsername) {
         discordUsernameInput.focus();
         showNotification('Please enter a valid Discord username.', 'error');
+        return;
+    }
+
+    if (!playerCountry) {
+        playerCountryInput.focus();
+        showNotification('Please enter the country you want to represent.', 'error');
         return;
     }
 
@@ -268,7 +275,7 @@ async function submitRegistration() {
 
     modal.style.display = 'none';
     document.getElementById('enterEventForm').reset();
-    document.getElementById('playerCountry').selectedIndex = 0;
+    playerCountryInput.value = '';
 }
 
 async function sendToGoogleSheets(data) {
