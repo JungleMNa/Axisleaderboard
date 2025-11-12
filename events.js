@@ -7,7 +7,7 @@ let hasLoadedOnce = false; // Flag to track if we've loaded from API at least on
 const GOOGLE_SHEETS_CONFIG = {
     // Replace this with your actual Google Apps Script Web App URL
     // Instructions to set up are in the setup-instructions.txt file
-    scriptURL: 'https://script.google.com/macros/s/AKfycbz_is5E1jYRPebl_cQWDH3pqgSoOS1LYhvZGVI11IlSFtmNNTgVw9HB2XsIvXYh2Zxg2A/exec'
+    scriptURL: 'https://script.google.com/macros/s/AKfycbw3TyX_uLdAKvU22PtNeh6URaeBeIvhS5iWCswsArFLjV-ceTLk9yVVyhqHeGPJ3UAOJQ/exec'
 };
 
 // Load events on page load
@@ -214,11 +214,12 @@ function showEnterEvent(eventId) {
     const event = events.find(e => e.id === eventId);
     const modal = document.getElementById('enterEventModal');
     const info = document.getElementById('enterEventInfo');
+    const registerHint = window.i18n ? window.i18n.t('events.registrationHint') : 'Enter your Discord username and select your country to register';
 
     info.innerHTML = `
         <div style="margin-bottom: 2rem; padding: 1rem; background: var(--darker-bg); border-left: 3px solid var(--primary-color);">
             <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">${event.name}</h3>
-            <p style="color: var(--text-secondary);">Enter your Discord username to register</p>
+            <p style="color: var(--text-secondary);">${registerHint}</p>
         </div>
     `;
 
@@ -231,14 +232,23 @@ async function submitRegistration() {
     const modal = document.getElementById('enterEventModal');
     const eventId = parseInt(modal.dataset.eventId);
     const event = events.find(e => e.id === eventId);
-    const discordUsername = document.getElementById('discordUsername').value;
+    const discordUsernameInput = document.getElementById('discordUsername');
+    const discordUsername = discordUsernameInput.value.trim();
+    const playerCountry = document.getElementById('playerCountry').value;
+
+    if (!discordUsername) {
+        discordUsernameInput.focus();
+        showNotification('Please enter a valid Discord username.', 'error');
+        return;
+    }
 
     // Prepare data for Google Sheets
     const registrationData = {
         timestamp: new Date().toISOString(),
         event: event.name,
         username: discordUsername,
-        eventDate: event.date
+        eventDate: event.date,
+        country: playerCountry
     };
 
     // Send to Google Sheets
@@ -258,6 +268,7 @@ async function submitRegistration() {
 
     modal.style.display = 'none';
     document.getElementById('enterEventForm').reset();
+    document.getElementById('playerCountry').selectedIndex = 0;
 }
 
 async function sendToGoogleSheets(data) {

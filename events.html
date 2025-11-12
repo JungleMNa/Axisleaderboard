@@ -69,6 +69,20 @@
                     <label for="discordUsername" data-i18n="events.discordUsername">Discord Username</label>
                     <input type="text" id="discordUsername" placeholder="YourUsername#1234" required>
                 </div>
+                <div class="form-group">
+                    <label for="playerCountry" data-i18n="events.countryLabel">Country</label>
+                    <select id="playerCountry" required>
+                        <option value="" disabled selected data-i18n="events.selectCountry">Select your country</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Finland">Finland</option>
+                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-primary" data-i18n="events.register">REGISTER</button>
             </form>
         </div>

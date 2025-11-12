@@ -2,7 +2,7 @@
 // This manages events via Google Sheets
 
 // sheets
-const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbz_is5E1jYRPebl_cQWDH3pqgSoOS1LYhvZGVI11IlSFtmNNTgVw9HB2XsIvXYh2Zxg2A/exec';
+const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbw3TyX_uLdAKvU22PtNeh6URaeBeIvhS5iWCswsArFLjV-ceTLk9yVVyhqHeGPJ3UAOJQ/exec';
 
 let currentEvents = [];
 let selectedEventId = null;
@@ -189,8 +189,10 @@ async function loadPlayersForEvent(eventId) {
                     minute: '2-digit'
                 });
                 
+                const countryText = reg.country ? reg.country : 'Unknown';
+                
                 playerItem.innerHTML = `
-                    <div class="player-name">${reg.username}</div>
+                    <div class="player-name">${reg.username} <span class="player-country">(${countryText})</span></div>
                     <div class="player-time">${formattedTime}</div>
                 `;
                 

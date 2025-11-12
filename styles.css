@@ -762,6 +762,14 @@ html {
     font-size: 1rem;
 }
 
+.player-country {
+    margin-left: 0.3rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 .player-subtext {
     font-size: 0.8rem;
     color: var(--text-secondary);
